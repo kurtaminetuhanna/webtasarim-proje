@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 320px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+h2 {
+  text-align: center;
+  color: #0d1b55;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.name-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.name-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 7px;
+  border: 1px solid #999;
+  outline: none;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #0d1b55;
+}
+
+.btn {
+  width: 100%;
+  background-color: #0d1b55;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background-color: #142670;
+}
+
+.login-text {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.login-text a {
+  color: #0d1b55;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Mobilde alt alta gelsin */
+@media (max-width: 400px) {
+  .name-row {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+}
