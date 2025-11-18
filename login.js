@@ -1,26 +1,46 @@
-
 const form = document.querySelector("form");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 
-const dogruEmail = "test@gmail.com";
-const dogruSifre = "12345";
+form.addEventListener("submit", async function (event) {
+  event.preventDefault();
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); 
+  const email = emailInput.value.trim();
+  const sifre = passwordInput.value.trim();
 
-  const girilenEmail = emailInput.value.trim();
-  const girilenSifre = passwordInput.value.trim();
-
-  if (girilenEmail === "" || girilenSifre === "") {
+  
+  if (email === "" || sifre === "") {
     alert("Lütfen tüm alanları doldurunuz!");
     return;
   }
 
-  if (girilenEmail === dogruEmail && girilenSifre === dogruSifre) {
-    alert("Giriş başarılı! ");
-  } else {
-    alert("E-posta veya şifre hatalı! ");
+  try {
+    
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, sifre }),
+    });
+
+    const result = await response.json();
+
+    
+    if (!response.ok) {
+      alert(result.message);
+      return;
+    }
+
+    
+    alert("Giriş başarılı!");
+
+    
+    console.log("Kullanıcı:", result.user);
+
+    
+
+  } catch (err) {
+    console.error("Sunucu hatası:", err);
+    alert("Sunucuya bağlanılamadı!");
   }
 
   
