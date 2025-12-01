@@ -5,7 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-
 .container {
     max-width: 400px; 
     margin: 0 auto; 
@@ -81,7 +80,6 @@
     text-align: right;
 }
 
-
 .product-name {
     font-size: 16px;
     font-weight: bold;
@@ -114,8 +112,6 @@
 .add-to-cart-btn:hover {
     background-color: #f0f0f0;
 }
-
-
 
 @media (min-width: 768px) {
     
